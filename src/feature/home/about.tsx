@@ -1,8 +1,8 @@
-import AboutCard from "./about-card";
+import AboutCard from './about-card';
 
 export default function About() {
   return (
-    <section className="w-full py-10 2xl:py-20">
+    <section className="w-full flex flex-col py-10 2xl:py-20 gap-10 2xl:gap-0">
       <AboutCard
         title="유연한 드로잉 캔버스"
         description="브러시로 자유롭게 그리기, 색상 선택, 선 두께 조절, 지우개 사용, 그리고 스케치를 이미지로 저장까지"
