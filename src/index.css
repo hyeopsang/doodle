@@ -5,7 +5,14 @@
   --breakpoint-2xl: 50.625rem; /* 810px */
   --breakpoint-3xl: 75rem; /* 1200px */
 }
-
+@layer base {
+  html {
+    @apply bg-white dark:bg-black;
+  }
+  body {
+    @apply bg-white dark:bg-black;
+  }
+}
 :root {
   font-family: "Pretendard", sans-serif;
   font-weight: 400;
