@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full flex justify-center items-center bg-white dark:bg-black ">
       <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] h-full border-t border-[#eee] py-[50px] 2xl:py-25 flex flex-col 2xl:flex-row justify-between gap-10 2xl:gap-0">
         <div className="text-black dark:text-white">
-          <Doodle width={71} height={25} />
+          <Doodle width={30} height={30} />
         </div>
         <div className="flex flex-col 2xl:flex-row gap-10 text-[#999] font-medium">
           <div>
