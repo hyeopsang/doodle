@@ -12,7 +12,7 @@ export default function HomePage() {
               <p className="text-[#999]">그리기. 쓰기. 정리하기. 어디서든.</p>
             </div>
 
-            <button className="px-3.5 py-2 rounded-full bg-black text-center items-center dark:bg-white text-white dark:text-black text-sm cursor-pointer">
+            <button className="px-3.5 py-2 rounded-full font-semibold bg-black text-center items-center dark:bg-white text-white dark:text-black text-sm cursor-pointer">
               지금 시작하기
             </button>
           </div>

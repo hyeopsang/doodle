@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="text-black dark:text-white">
           <Doodle width={71} height={25} />
         </div>
-        <div className="flex flex-col 2xl:flex-row gap-10 text-[#999]">
+        <div className="flex flex-col 2xl:flex-row gap-10 text-[#999] font-medium">
           <div>
             <ul>
               <li className="text-black dark:text-white">App</li>
