@@ -1,17 +1,20 @@
 import Doodle from '@/assets/doodle-a.svg?react';
+import {Link} from 'react-router';
 
 export default function Footer() {
   return (
     <footer className="w-full flex justify-center items-center bg-white dark:bg-black ">
       <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] h-full border-t border-[#eee] py-[50px] 2xl:py-25 flex flex-col 2xl:flex-row justify-between gap-10 2xl:gap-0">
-        <div className="text-black dark:text-white">
+        <Link to={'/'} className="text-black dark:text-white">
           <Doodle width={30} height={30} />
-        </div>
+        </Link>
         <div className="flex flex-col 2xl:flex-row gap-10 text-[#999] font-medium">
           <div>
             <ul>
               <li className="text-black dark:text-white">App</li>
-              <li>Home</li>
+              <li>
+                <Link to={'/'}>Home</Link>
+              </li>
               <li>Feature</li>
               <li>Pricing</li>
             </ul>
