@@ -23,7 +23,7 @@ export default function AboutCard({
 
       {/* 설명 영역 */}
       <div className="w-full h-fit 2xl:w-1/2 gap-[15px] 2xl:aspect-square flex flex-col justify-center items-center text-left p-4">
-        <h3 className="3xl:w-80 w-full text-left text-2xl 2xl:text-[28px] 3xl:text-[32px] text-black font-bold">
+        <h3 className="3xl:w-80 w-full text-left text-2xl 2xl:text-[28px] 3xl:text-[32px] text-black dark:text-white font-bold">
           {title}
         </h3>
 

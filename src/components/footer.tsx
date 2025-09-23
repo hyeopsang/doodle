@@ -1,4 +1,4 @@
-import Doodle from "@/assets/doodle.svg?react";
+import Doodle from '@/assets/doodle-a.svg?react';
 
 export default function Footer() {
   return (
