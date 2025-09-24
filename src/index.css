@@ -15,6 +15,9 @@
   body {
     @apply bg-white dark:bg-black;
   }
+  .card-hover {
+    @apply transition-all duration-200 hover:scale-[1.01] hover:shadow-2xl active:scale-95;
+  }
 }
 :root {
   font-family: 'Pretendard', sans-serif;
@@ -131,13 +134,4 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --highlight: oklch(0.852 0.199 91.936);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }

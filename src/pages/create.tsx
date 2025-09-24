@@ -2,10 +2,14 @@ import {Link} from 'react-router';
 
 export default function CreatePage() {
   return (
-    <div className="bg-white dark:bg-black w-full h-dvh text-black dark:text-white flex justify-center">
-      <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] flex flex-col 2xl:flex-row gap-4">
+    <div className="bg-white dark:bg-black w-full h-full text-black flex justify-center py-10">
+      <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] flex flex-col justify-center items-center 2xl:flex-row gap-4">
         {/* 드로잉 */}
-        <div className="w-full 2xl:w-1/2 aspect-square bg-white flex flex-col justify-center items-center p-4">
+        <div
+          className="w-full 2xl:w-1/2 aspect-square bg-white shadow-xl 
+                     flex flex-col justify-center items-center p-4 rounded-[20px] 
+                      card-hover cursor-pointer"
+        >
           <h2 className="text-2xl 2xl:text-[28px] 3xl:text-[32px] font-bold">
             드로잉
           </h2>
@@ -17,7 +21,9 @@ export default function CreatePage() {
         {/* 글쓰기 */}
         <Link
           to={'/draft'}
-          className="w-full 2xl:w-1/2 aspect-square bg-white flex flex-col justify-center items-center p-4"
+          className="w-full 2xl:w-1/2 aspect-square bg-white shadow-xl 
+                     flex flex-col justify-center items-center p-4 rounded-[20px] 
+                     card-hover"
         >
           <h2 className="text-2xl 2xl:text-[28px] 3xl:text-[32px] font-bold">
             글쓰기
