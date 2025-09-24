@@ -18,18 +18,21 @@ import {
 } from '@platejs/basic-styles/react';
 import {Plate, usePlateEditor} from 'platejs/react';
 
-import {BlockquoteElement} from '@/components/ui/blockquote-node';
-import {Editor, EditorContainer} from '@/components/ui/editor';
-import {FixedToolbar} from '@/components/ui/fixed-toolbar';
-import {H1Element, H2Element, H3Element} from '@/components/ui/heading-node';
-import {MarkToolbarButton} from '@/components/ui/mark-toolbar-button';
-import {ToolbarButton} from '@/components/ui/toolbar';
-import {FontSizeToolbarButton} from '@/components/ui/font-size-toolbar-button';
+import {BlockquoteElement} from '@/lib/editor/components/ui/blockquote-node';
+import {Editor, EditorContainer} from '@/lib/editor/components/ui/editor';
+import {FixedToolbar} from '@/lib/editor/components/ui/fixed-toolbar';
+import {
+  H1Element,
+  H2Element,
+  H3Element,
+} from '@/lib/editor/components/ui/heading-node';
+import {MarkToolbarButton} from '@/lib/editor/components/ui/mark-toolbar-button';
+import {ToolbarButton} from '@/lib/editor/components/ui/toolbar';
+import {FontSizeToolbarButton} from '@/lib/editor/components/ui/font-size-toolbar-button';
 import DarkModePicker from '@/components/dark-mode-picker';
-import {AutoformatKit} from '@/components/autoformat-kit';
-import {ListKit} from '@/components/list-kit';
+import {AutoformatKit} from '@/lib/editor/components/autoformat-kit';
+import {ListKit} from '@/lib/editor/components/list-kit';
 import {Link} from 'react-router';
-
 const initialValue: Value = [];
 
 export default function Draft() {
@@ -53,8 +56,8 @@ export default function Draft() {
   });
 
   return (
-    <div className="bg-[#fcfcfc] w-full h-dvh text-black flex-col items-center dark:text-white flex justify-center ">
-      <div className="max-w-[960px] border-x border-[#eee] bg-white dark:bg-black w-full h-full px-[20px] flex flex-col gap-5 2xl:gap-10">
+    <div className="bg-[#fcfcfc] dark:bg-black w-full h-dvh text-black flex-col items-center dark:text-white flex justify-center ">
+      <div className="max-w-[960px] border-x border-[#eee] dark:border-black bg-white dark:bg-black w-full h-full px-[20px] flex flex-col gap-5 2xl:gap-10">
         <div className="w-full flex items-center justify-between">
           <Link to={'/'}>
             <Doodle width={25} height={25} />
@@ -86,6 +89,7 @@ export default function Draft() {
             <MarkToolbarButton nodeType="underline" tooltip="Underline (⌘+U)">
               U
             </MarkToolbarButton>
+
             <FontSizeToolbarButton />
             <div className="flex-1" />
             <ToolbarButton>
