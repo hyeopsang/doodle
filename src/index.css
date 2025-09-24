@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --breakpoint-xs: 23.4375rem; /* 375px */
@@ -54,14 +54,6 @@
 html,
 body {
   font-family: 'Pretendard', sans-serif;
-}
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-ol {
-  list-style-type: decimal;
-  padding-left: 1.5rem;
 }
 
 @theme inline {

@@ -1,4 +1,5 @@
 import type {Value} from 'platejs';
+import Doodle from '@/assets/doodle-a.svg?react';
 
 import {
   BlockquotePlugin,
@@ -25,6 +26,9 @@ import {MarkToolbarButton} from '@/components/ui/mark-toolbar-button';
 import {ToolbarButton} from '@/components/ui/toolbar';
 import {FontSizeToolbarButton} from '@/components/ui/font-size-toolbar-button';
 import DarkModePicker from '@/components/dark-mode-picker';
+import {AutoformatKit} from '@/components/autoformat-kit';
+import {ListKit} from '@/components/list-kit';
+import {Link} from 'react-router';
 
 const initialValue: Value = [];
 
@@ -36,8 +40,11 @@ export default function Draft() {
       UnderlinePlugin,
       FontBackgroundColorPlugin,
       FontColorPlugin,
+
       FontFamilyPlugin,
       FontSizePlugin,
+      ...AutoformatKit,
+      ...ListKit,
       H1Plugin.withComponent(H1Element),
       H2Plugin.withComponent(H2Element),
       H3Plugin.withComponent(H3Element),
@@ -47,8 +54,11 @@ export default function Draft() {
 
   return (
     <div className="bg-[#fcfcfc] w-full h-dvh text-black flex-col items-center dark:text-white flex justify-center ">
-      <div className="max-w-[960px] border-x border-[#eee] bg-white w-full h-full px-[20px] flex flex-col gap-10">
-        <div className="w-full flex items-center justify-end">
+      <div className="max-w-[960px] border-x border-[#eee] bg-white dark:bg-black w-full h-full px-[20px] flex flex-col gap-5 2xl:gap-10">
+        <div className="w-full flex items-center justify-between">
+          <Link to={'/'}>
+            <Doodle width={25} height={25} />
+          </Link>
           <DarkModePicker />
         </div>
         <Plate editor={editor}>
@@ -78,7 +88,9 @@ export default function Draft() {
             </MarkToolbarButton>
             <FontSizeToolbarButton />
             <div className="flex-1" />
-
+            <ToolbarButton>
+              <p>내 스케치</p>
+            </ToolbarButton>
             <ToolbarButton
               className="px-2"
               onClick={() => {
@@ -91,12 +103,12 @@ export default function Draft() {
           <input
             type="text"
             placeholder="제목"
-            className="text-[36px] font-bold outline-0 pt-10"
+            className="2xl:text-[36px] text-[32px] font-bold outline-0 pt-5 2xl:pt-10"
           />
           <hr />
           <EditorContainer>
             <Editor
-              className="w-full text-[20px]"
+              className="w-full text-[16px] 2xl:text-[20px]"
               variant={'none'}
               placeholder="글을 작성해 볼까요?"
             />

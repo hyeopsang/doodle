@@ -1,5 +1,6 @@
 import About from '@/feature/home/about';
 import Feature from '@/feature/home/feature';
+import {Link} from 'react-router';
 
 export default function HomePage() {
   return (
@@ -12,9 +13,12 @@ export default function HomePage() {
               <p className="text-[#999]">그리기. 쓰기. 정리하기. 어디서든.</p>
             </div>
 
-            <button className="px-3.5 py-2 rounded-full font-semibold bg-black text-center items-center dark:bg-white text-white dark:text-black text-sm cursor-pointer">
+            <Link
+              to={'/create'}
+              className="px-3.5 py-2 rounded-full font-semibold bg-black text-center items-center dark:bg-white text-white dark:text-black text-sm cursor-pointer"
+            >
               지금 시작하기
-            </button>
+            </Link>
           </div>
         </section>
         <About />

@@ -1,17 +1,20 @@
-import {useState, useEffect} from 'react';
+'use client';
+
+import * as React from 'react';
+
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import {type VariantProps, cva} from 'class-variance-authority';
-import {ChevronDown} from 'lucide-react';
+import { type VariantProps, cva } from 'class-variance-authority';
+import { ChevronDown } from 'lucide-react';
 
 import {
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import {Separator} from '@/components/ui/separator';
-import {Tooltip, TooltipTrigger} from '@/components/ui/tooltip';
-import {cn} from '@/lib/utils';
+import { Separator } from '@/components/ui/separator';
+import { Tooltip, TooltipTrigger } from '@/components/ui/tooltip';
+import { cn } from '@/lib/utils';
 
 export function Toolbar({
   className,
@@ -253,7 +256,7 @@ export function ToolbarToggleItem({
   VariantProps<typeof toolbarButtonVariants>) {
   return (
     <ToolbarPrimitive.ToggleItem
-      className={cn(toolbarButtonVariants({size, variant}), className)}
+      className={cn(toolbarButtonVariants({ size, variant }), className)}
       {...props}
     />
   );
@@ -301,9 +304,9 @@ function withTooltip<T extends React.ElementType>(Component: T) {
     tooltipTriggerProps,
     ...props
   }: TooltipProps<T>) {
-    const [mounted, setMounted] = useState(false);
+    const [mounted, setMounted] = React.useState(false);
 
-    useEffect(() => {
+    React.useEffect(() => {
       setMounted(true);
     }, []);
 
@@ -356,7 +359,7 @@ export function ToolbarMenuGroup({
   className,
   label,
   ...props
-}: React.ComponentProps<typeof DropdownMenuRadioGroup> & {label?: string}) {
+}: React.ComponentProps<typeof DropdownMenuRadioGroup> & { label?: string }) {
   return (
     <>
       <DropdownMenuSeparator
