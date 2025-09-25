@@ -2,31 +2,34 @@ import {
   BaselineIcon,
   BoldIcon,
   Code2Icon,
-  HighlighterIcon,
   ItalicIcon,
   PaintBucketIcon,
   StrikethroughIcon,
   UnderlineIcon,
-} from "lucide-react";
-import { KEYS } from "platejs";
-import { useEditorReadOnly } from "platejs/react";
-import { AlignToolbarButton } from "./align-toolbar-button";
-import { EmojiToolbarButton } from "./emoji-toolbar-button";
-import { FontColorToolbarButton } from "./font-color-toolbar-button";
-import { FontSizeToolbarButton } from "./font-size-toolbar-button";
-import { RedoToolbarButton, UndoToolbarButton } from "./history-toolbar-button";
-import { LinkToolbarButton } from "./link-toolbar-button";
+} from 'lucide-react';
+import {KEYS, type Value} from 'platejs';
+import {useEditorReadOnly} from 'platejs/react';
+import {AlignToolbarButton} from './align-toolbar-button';
+import {EmojiToolbarButton} from './emoji-toolbar-button';
+import {FontColorToolbarButton} from './font-color-toolbar-button';
+import {FontSizeToolbarButton} from './font-size-toolbar-button';
+import {RedoToolbarButton, UndoToolbarButton} from './history-toolbar-button';
+import {LinkToolbarButton} from './link-toolbar-button';
 import {
   BulletedListToolbarButton,
   NumberedListToolbarButton,
   TodoListToolbarButton,
-} from "./list-toolbar-button";
-import { MarkToolbarButton } from "./mark-toolbar-button";
-import { MediaToolbarButton } from "./media-toolbar-button";
-import { TableToolbarButton } from "./table-toolbar-button";
-import { ToolbarGroup } from "./toolbar";
-import { TurnIntoToolbarButton } from "./turn-into-toolbar-button";
-export function FixedToolbarButtons() {
+} from './list-toolbar-button';
+import {MarkToolbarButton} from './mark-toolbar-button';
+import {MediaToolbarButton} from './media-toolbar-button';
+import {TableToolbarButton} from './table-toolbar-button';
+import {ToolbarGroup} from './toolbar';
+import {TurnIntoToolbarButton} from './turn-into-toolbar-button';
+import {ResetToolbarButton} from './reset-toolbar-button';
+export interface FixedToolbarButtonsProps {
+  value: Value;
+}
+export function FixedToolbarButtons({value}: FixedToolbarButtonsProps) {
   const readOnly = useEditorReadOnly();
   return (
     <div className="flex w-full">
@@ -89,11 +92,7 @@ export function FixedToolbarButtons() {
         </>
       )}
       <div className="grow" />
-      <ToolbarGroup>
-        <MarkToolbarButton nodeType={KEYS.highlight} tooltip="Highlight">
-          <HighlighterIcon />
-        </MarkToolbarButton>
-      </ToolbarGroup>
+      <ResetToolbarButton value={value} />
     </div>
   );
 }

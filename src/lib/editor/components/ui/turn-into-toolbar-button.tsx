@@ -1,25 +1,22 @@
-import { useState, useMemo } from "react";
-import type { TElement } from "platejs";
-import { KEYS } from "platejs";
-import { useEditorRef, useSelectionFragmentProp } from "platejs/react";
-import { getBlockType, setBlockType } from "../transforms";
-
+import {useState, useMemo} from 'react';
+import type {TElement} from 'platejs';
+import {KEYS} from 'platejs';
+import {useEditorRef, useSelectionFragmentProp} from 'platejs/react';
+import {getBlockType, setBlockType} from '../transforms';
 // Plate 기능은 그대로 유지
 const turnIntoItems = [
-  { icon: "¶", label: "Text", value: KEYS.p },
-  { icon: "H1", label: "Heading 1", value: "h1" },
-  { icon: "H2", label: "Heading 2", value: "h2" },
-  { icon: "H3", label: "Heading 3", value: "h3" },
-  { icon: "H4", label: "Heading 4", value: "h4" },
-  { icon: "H5", label: "Heading 5", value: "h5" },
-  { icon: "H6", label: "Heading 6", value: "h6" },
-  { icon: "•", label: "Bulleted list", value: KEYS.ul },
-  { icon: "1.", label: "Numbered list", value: KEYS.ol },
-  { icon: "☐", label: "To-do list", value: KEYS.listTodo },
-  { icon: "▶", label: "Toggle list", value: KEYS.toggle },
-  { icon: "</>", label: "Code", value: KEYS.codeBlock },
-  { icon: "❝", label: "Quote", value: KEYS.blockquote },
-  { icon: "3C", label: "3 columns", value: "action_three_columns" },
+  {icon: '¶', label: 'Text', value: KEYS.p},
+  {icon: 'H1', label: 'Heading 1', value: 'h1'},
+  {icon: 'H2', label: 'Heading 2', value: 'h2'},
+  {icon: 'H3', label: 'Heading 3', value: 'h3'},
+  {icon: 'H4', label: 'Heading 4', value: 'h4'},
+  {icon: 'H5', label: 'Heading 5', value: 'h5'},
+  {icon: 'H6', label: 'Heading 6', value: 'h6'},
+  {icon: '•', label: 'Bulleted list', value: KEYS.ul},
+  {icon: '1.', label: 'Numbered list', value: KEYS.ol},
+  {icon: '☐', label: 'To-do list', value: KEYS.listTodo},
+  {icon: '</>', label: 'Code Block', value: KEYS.codeBlock},
+  {icon: '❝', label: 'Quote', value: KEYS.blockquote},
 ];
 
 export function TurnIntoToolbarButton() {
@@ -52,7 +49,7 @@ export function TurnIntoToolbarButton() {
       {/* 드롭다운 메뉴 */}
       {open && (
         <div className="absolute left-0 top-full mt-1 w-48 rounded-md border bg-white shadow">
-          {turnIntoItems.map(({ icon, label, value: itemValue }) => (
+          {turnIntoItems.map(({icon, label, value: itemValue}) => (
             <button
               key={itemValue}
               type="button"

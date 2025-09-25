@@ -3,8 +3,8 @@ import {Link} from 'react-router';
 
 export default function Footer() {
   return (
-    <footer className="w-full flex justify-center items-center bg-white dark:bg-black ">
-      <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] h-full border-t border-[#eee] py-[50px] 2xl:py-25 flex flex-col 2xl:flex-row justify-between gap-10 2xl:gap-0">
+    <footer className="w-full flex justify-center items-center bg-white dark:bg-black border-t border-[#eee]">
+      <div className="max-w-[960px] w-full 3xl:px-0 2xl:px-[20px] xs:px-[7.5px] h-full py-[50px] 2xl:py-25 flex flex-col 2xl:flex-row justify-between gap-10 2xl:gap-0">
         <Link to={'/'} className="text-black dark:text-white">
           <Doodle width={30} height={30} />
         </Link>
