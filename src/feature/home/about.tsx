@@ -1,4 +1,4 @@
-import AboutCard from './about-card';
+import AboutCard from "./about-card";
 
 export default function About() {
   return (
@@ -12,7 +12,7 @@ export default function About() {
       <AboutCard
         title="글 속에 스케치 삽입"
         description="직접 스케치 한 이미지를 글에 삽입하여 아이디어를 시각적으로 표현"
-        imgSrc=""
+        imgSrc="./images/docs.png"
       />
       <AboutCard
         title="다양한 글쓰기 기능 및 히스토리 지원"

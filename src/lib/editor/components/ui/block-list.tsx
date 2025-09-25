@@ -1,19 +1,18 @@
-'use client';
+import type { TListElement } from "platejs";
 
-import React from 'react';
-
-import type {TListElement} from 'platejs';
-
-import {isOrderedList} from '@platejs/list';
-import {useTodoListElement, useTodoListElementState} from '@platejs/list/react';
+import { isOrderedList } from "@platejs/list";
+import {
+  useTodoListElement,
+  useTodoListElementState,
+} from "@platejs/list/react";
 import {
   type PlateElementProps,
   type RenderNodeWrapper,
   useReadOnly,
-} from 'platejs/react';
+} from "platejs/react";
 
-import {Checkbox} from '@/lib/editor/components/ui/checkbox';
-import {cn} from '@/lib/utils';
+import { Checkbox } from "./checkbox";
+import { cn } from "@/lib/utils";
 
 const config: Record<
   string,
@@ -35,14 +34,14 @@ export const BlockList: RenderNodeWrapper = (props) => {
 };
 
 function List(props: PlateElementProps) {
-  const {listStart, listStyleType} = props.element as TListElement;
-  const {Li, Marker} = config[listStyleType] ?? {};
-  const List = isOrderedList(props.element) ? 'ol' : 'ul';
+  const { listStart, listStyleType } = props.element as TListElement;
+  const { Li, Marker } = config[listStyleType] ?? {};
+  const List = isOrderedList(props.element) ? "ol" : "ul";
 
   return (
     <List
       className="relative m-0 p-0"
-      style={{listStyleType}}
+      style={{ listStyleType }}
       start={listStart}
     >
       {Marker && <Marker {...props} />}
@@ -52,16 +51,16 @@ function List(props: PlateElementProps) {
 }
 
 function TodoMarker(props: PlateElementProps) {
-  const state = useTodoListElementState({element: props.element});
-  const {checkboxProps} = useTodoListElement(state);
+  const state = useTodoListElementState({ element: props.element });
+  const { checkboxProps } = useTodoListElement(state);
   const readOnly = useReadOnly();
 
   return (
     <div contentEditable={false}>
       <Checkbox
         className={cn(
-          'absolute top-1 -left-6',
-          readOnly && 'pointer-events-none'
+          "absolute top-1 -left-6",
+          readOnly && "pointer-events-none"
         )}
         {...checkboxProps}
       />
@@ -73,9 +72,9 @@ function TodoLi(props: PlateElementProps) {
   return (
     <li
       className={cn(
-        'list-none',
+        "list-none",
         (props.element.checked as boolean) &&
-          'text-muted-foreground line-through'
+          "text-muted-foreground line-through"
       )}
     >
       {props.children}

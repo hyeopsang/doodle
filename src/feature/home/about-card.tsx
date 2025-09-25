@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
 interface AboutCardProps {
   title: string;
@@ -16,8 +16,8 @@ export default function AboutCard({
   return (
     <div
       className={clsx(
-        'flex 2xl:flex-row flex-col items-center w-full gap-5 2xl:gap-0',
-        reverse && '2xl:flex-row-reverse 3xl:flex-row-reverse'
+        "flex 2xl:flex-row flex-col items-center w-full gap-5 2xl:gap-0",
+        reverse && "2xl:flex-row-reverse 3xl:flex-row-reverse"
       )}
     >
       {/* 이미지나 타이틀 영역 */}
