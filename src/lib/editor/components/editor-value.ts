@@ -1,29 +1,27 @@
-import {createPlateEditor} from 'platejs/react';
+import { createPlateEditor } from "platejs/react";
 import {
   BlockquotePlugin,
   H1Plugin,
   H2Plugin,
   H3Plugin,
-} from '@platejs/basic-nodes/react';
+} from "@platejs/basic-nodes/react";
 import {
   FontBackgroundColorPlugin,
   FontColorPlugin,
   FontFamilyPlugin,
   FontSizePlugin,
-} from '@platejs/basic-styles/react';
-import {BlockquoteElement} from '@/lib/editor/components/ui/blockquote-node';
-import {
-  H1Element,
-  H2Element,
-  H3Element,
-} from '@/lib/editor/components/ui/heading-node';
-import {AutoformatKit} from '@/lib/editor/components/autoformat-kit';
-import {ListKit} from '@/lib/editor/components/list-kit';
-import {CodeBlockKit} from './ui/code-block-kit';
-import {BasicMarksKit} from './plugins/basic-marks-kit';
-import {AlignKit} from './ui/align-kit';
-import {TableKit} from './ui/table-kit';
-import {MediaKit} from './media-kit';
+} from "@platejs/basic-styles/react";
+import { BlockquoteElement } from "../nodes/blockquote-node";
+import { H1Element, H2Element, H3Element } from "../nodes/heading-node";
+import { AutoformatKit } from "../kits/autoformat-kit";
+import { ListKit } from "../kits/list-kit";
+import { CodeBlockKit } from "../kits/code-block-kit";
+import { BasicMarksKit } from "../kits/basic-marks-kit";
+import { AlignKit } from "../kits/align-kit";
+import { TableKit } from "../kits/table-kit";
+import { MediaKit } from "../kits/media-kit";
+import { LinkKit } from "../kits/link-kit";
+import { ToggleKit } from "../kits/toggle-kit";
 
 export const editor = createPlateEditor({
   plugins: [
@@ -38,6 +36,8 @@ export const editor = createPlateEditor({
     ...AlignKit,
     ...TableKit,
     ...MediaKit,
+    ...LinkKit,
+    ...ToggleKit,
     H1Plugin.withComponent(H1Element),
     H2Plugin.withComponent(H2Element),
     H3Plugin.withComponent(H3Element),

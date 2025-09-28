@@ -1,0 +1,84 @@
+import {
+  BaselineIcon,
+  BoldIcon,
+  Code2Icon,
+  ItalicIcon,
+  PaintBucketIcon,
+  StrikethroughIcon,
+  UnderlineIcon,
+} from "lucide-react";
+import { KEYS } from "platejs";
+import { useEditorReadOnly } from "platejs/react";
+import { AlignToolbarButton } from "./align-toolbar-button";
+import { EmojiToolbarButton } from "./emoji-toolbar-button";
+import { FontColorToolbarButton } from "./font-color-toolbar-button";
+import { FontSizeToolbarButton } from "./font-size-toolbar-button";
+import { UndoToolbarButton } from "./undo-toolbar-button";
+import { RedoToolbarButton } from "./redo-toolbar-button";
+import { LinkToolbarButton } from "./link-toolbar-button";
+import {
+  BulletedListToolbarButton,
+  NumberedListToolbarButton,
+  TodoListToolbarButton,
+} from "./list-toolbar-button";
+import { MarkToolbarButton } from "./mark-toolbar-button";
+import { MediaToolbarButton } from "./media-toolbar-button";
+import { TableToolbarButton } from "./table-toolbar-button";
+import { ToggleToolbarButton } from "./toggle-toolbar-button";
+import { TurnIntoToolbarButton } from "./turn-into-toolbar-button";
+import ToolBarWrapper from "./toolbar-wrapper";
+export function FixedToolbarButtons() {
+  const readOnly = useEditorReadOnly();
+  return (
+    <div className="w-full">
+      {!readOnly && (
+        <ToolBarWrapper>
+          <UndoToolbarButton />
+          <RedoToolbarButton />
+          <TurnIntoToolbarButton />
+          <FontSizeToolbarButton />
+          <MarkToolbarButton nodeType={KEYS.bold} tooltip="Bold (⌘+B)">
+            <BoldIcon />
+          </MarkToolbarButton>
+          <MarkToolbarButton nodeType={KEYS.italic} tooltip="Italic (⌘+I)">
+            <ItalicIcon />
+          </MarkToolbarButton>
+          <MarkToolbarButton
+            nodeType={KEYS.underline}
+            tooltip="Underline (⌘+U)"
+          >
+            <UnderlineIcon />
+          </MarkToolbarButton>
+          <MarkToolbarButton
+            nodeType={KEYS.strikethrough}
+            tooltip="Strikethrough (⌘+⇧+M)"
+          >
+            <StrikethroughIcon />
+          </MarkToolbarButton>
+          <MarkToolbarButton nodeType={KEYS.code} tooltip="Code (⌘+E)">
+            <Code2Icon />
+          </MarkToolbarButton>
+          <FontColorToolbarButton nodeType={KEYS.color} tooltip="Text color">
+            <BaselineIcon />
+          </FontColorToolbarButton>
+          <FontColorToolbarButton
+            nodeType={KEYS.backgroundColor}
+            tooltip="Background color"
+          >
+            <PaintBucketIcon />
+          </FontColorToolbarButton>
+          <AlignToolbarButton />
+          <NumberedListToolbarButton />
+          <BulletedListToolbarButton />
+          <TodoListToolbarButton />
+          <ToggleToolbarButton />
+          <LinkToolbarButton />
+          <TableToolbarButton />
+          <EmojiToolbarButton />
+          <MediaToolbarButton nodeType={KEYS.img} />
+        </ToolBarWrapper>
+      )}
+      <div className="grow" />
+    </div>
+  );
+}
