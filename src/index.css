@@ -5,7 +5,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --breakpoint-xs: 23.4375rem; /* 375px */
-  --breakpoint-2xl: 50.625rem; /* 810px */
+  --breakpoint-2xl: 48rem; /* 810px */
   --breakpoint-3xl: 75rem; /* 1200px */
 }
 @layer base {

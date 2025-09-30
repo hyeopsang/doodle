@@ -1,20 +1,19 @@
-import {EditorContainer, Editor} from '@/lib/editor/components/ui/editor';
+import {EditorContainer, Editor} from '@/lib/editor/ui/editor';
+
 export default function EditorForm() {
   return (
-    <>
+    <EditorContainer>
       <input
-        type="text"
         placeholder="제목"
-        className="2xl:text-[36px] text-[32px] font-bold outline-0 pt-5 2xl:pt-10"
+        type="text"
+        className="outline-none text-4xl font-bold w-full placeholder:text-muted-foreground/80"
+        minLength={1}
       />
-      <hr />
-      <EditorContainer>
-        <Editor
-          className="w-full text-[16px] 2xl:text-[20px]"
-          variant={'none'}
-          placeholder="글을 작성해 볼까요?"
-        />
-      </EditorContainer>
-    </>
+      <Editor
+        className="w-full h-screen  text-[16px] 2xl:text-[20px]"
+        variant={'none'}
+        placeholder="텍스트 입력..."
+      />
+    </EditorContainer>
   );
 }

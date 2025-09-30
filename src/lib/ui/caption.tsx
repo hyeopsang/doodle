@@ -1,5 +1,4 @@
-import {cva, type VariantProps} from 'class-variance-authority';
-import {cn} from '@/lib/utils';
+import type {VariantProps} from 'class-variance-authority';
 
 import {
   Caption as CaptionPrimitive,
@@ -8,6 +7,10 @@ import {
   useCaptionButtonState,
 } from '@platejs/caption/react';
 import {createPrimitiveComponent} from '@udecode/cn';
+import {cva} from 'class-variance-authority';
+
+import {Button} from './button';
+import {cn} from '@/lib/utils';
 
 const captionVariants = cva('max-w-full', {
   defaultVariants: {
@@ -52,21 +55,7 @@ export function CaptionTextarea(
   );
 }
 
-// Button을 순수 HTML button + Tailwind로 대체
-export const CaptionButton = createPrimitiveComponent(
-  (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-    <button
-      {...props}
-      className={cn(
-        'inline-flex items-center justify-center rounded-md px-3 py-1.5',
-        'text-sm font-medium transition-colors',
-        'bg-gray-200 hover:bg-gray-300 active:bg-gray-400',
-        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400',
-        props.className
-      )}
-    />
-  )
-)({
+export const CaptionButton = createPrimitiveComponent(Button)({
   propsHook: useCaptionButton,
   stateHook: useCaptionButtonState,
 });

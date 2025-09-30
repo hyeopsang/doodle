@@ -1,31 +1,31 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from 'react';
 
 export default function DarkModePicker() {
-  const [theme, setTheme] = useState<"light" | "dark">(
-    localStorage.theme === "dark"
-      ? "dark"
-      : localStorage.theme === "light"
-      ? "light"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    localStorage.theme === 'dark'
+      ? 'dark'
+      : localStorage.theme === 'light'
+      ? 'light'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
   );
 
   // theme이 바뀔 때마다 html class에 적용
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
     } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
     }
   }, [theme]);
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="h-12 w-12 rounded-full p-2"
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="h-8 w-8 rounded-full"
     >
       <svg
         className="fill-violet-700 dark:block hidden"
