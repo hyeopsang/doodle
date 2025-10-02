@@ -1,7 +1,7 @@
 import ClickableCard from './clickable-card';
 export default function Create() {
   return (
-    <div className="flex flex-col justify-center items-center 2xl:flex-row gap-4">
+    <div className="flex flex-col justify-center items-center py-2 2xl:py-4 2xl:flex-row gap-4">
       <ClickableCard
         path="/drowing"
         title="드로잉"

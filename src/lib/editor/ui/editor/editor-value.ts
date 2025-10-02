@@ -26,9 +26,11 @@ import {
 import {BlockPlaceholderKit} from '../../plugins/block-placeholder-kit';
 import {FindReplacePlugin} from '@platejs/find-replace';
 import {SearchHighlightLeaf} from '../nodes/search-highlight-node';
+import {TrailingBlockKit} from '../../plugins/trailing-block-kit';
 
 export const editor = createPlateEditor({
   plugins: [
+    ...TrailingBlockKit,
     FontBackgroundColorPlugin,
     FontColorPlugin,
     ...CodeBlockKit,
